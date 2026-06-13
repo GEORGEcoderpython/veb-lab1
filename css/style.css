@@ -15,10 +15,12 @@ body {
     background-color: hsl(210, 100%, 97%);
     margin: 0;
     min-width: 20rem;
-    max-width: 75rem;
+    max-width: 100%;
     min-height: 100vh;
     margin-left: auto;
     margin-right: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -47,43 +49,146 @@ a {
     text-decoration: none;
 }
 
-a:hover,
-a:focus {
-    text-decoration: underline;
-    color: hsl(210, 100%, 35%);
+#main-title {
+    letter-spacing: 0.05em;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
     align-items: stretch;
     gap: 1rem;
-
     width: 100%;
     max-width: 60rem;
     min-width: 20rem;
     min-height: 25rem;
     padding: 1rem;
     margin: 0 auto;
+    flex: 1 0 auto;
+}
+
+main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
 .card {
-    background-color: #ffffff;
-    border: 1px solid #dddddd;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
     border-radius: 0.5rem;
-    padding: 1rem 1.25rem;
-    margin: 0;
-
-    width: 100%;
-    max-width: 100%;
-    min-height: 10rem;
+    position: relative;
+    background: #fff;
 }
 
-.card img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 0.75rem;
+.sticky-title {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 0.25rem 0;
+    font-weight: bold;
+}
+
+.relative-text {
+    position: relative;
+    left: 10px;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.bottom-link {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-weight: bold;
+    color: blue;
+    transition: transform 0.1s ease;
+}
+
+.card.highlight {
+    border-color: #0066cc;
+}
+
+.container * {
+    line-height: 1.5;
+}
+
+.card p {
+    text-indent: 0.5rem;
+}
+
+.container > h1 {
+    margin-bottom: 1.25rem;
+}
+
+h1 + div {
+    background-color: rgba(221, 34, 34, 0.7);
+}
+
+div + .card ~ .card {
+    border-style: dashed;
+}
+
+ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+}
+
+.card-figure img {
+    width: 100%;
+    max-width: 58rem;
+    height: 8rem;
+    object-fit: contain;
+}
+
+.card-figure figcaption {
+    font-size: 0.875rem;
+    color: #666666;
+    text-align: center;
+    margin-top: 0.25rem;
+}
+
+.badge-wrapper {
+    position: absolute;
+    align-self: flex-end;
+    flex: 0 0 auto;
+    min-width: 8rem;
+    max-width: 12rem;
+}
+
+.best-site {
+    position: sticky;
+    top: 0;
+    background: white;
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #ccc;
+    z-index: 11;
+}
+
+.shapka {
+    position: absolute;
+    right: 40rem;
+    width: 8rem;
+    min-height: 2rem;
+    padding: 0.4rem 0.6rem;
+    z-index: 10;
+}
+
+.card_highlight {
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    position: relative;
+    background: #fff;
 }
 
 .badge {
@@ -93,12 +198,281 @@ a:focus {
     width: 8.75rem;
     min-height: 2rem;
     padding: 0.4rem 0.6rem;
-
     background-color: #ffeb3b;
     color: #222222;
     font-size: 0.875rem;
     text-align: center;
     border-radius: 1rem;
     border: 1px solid rgb(224, 195, 0);
-    z-index: 10;
+    z-index: 1;
+    transition: transform 0.1s ease;
+}
+
+img[alt] {
+    border-radius: 0.25rem;
+}
+
+a[target="_blank"] {
+    font-weight: 700;
+}
+
+a[href^="https://ru.wikipedia.org"] {
+    text-transform: uppercase;
+}
+
+img[src$=".png"] {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+}
+
+a[href*="JavaScript"] {
+    color: #f57c00;
+}
+
+a:active {
+    transform: scale(0.97);
+}
+
+a:visited {
+    color: #4b0082;
+}
+
+input:focus-visible {
+    outline: 2px solid #0066cc;
+}
+
+ul li:first-child {
+    font-style: italic;
+}
+
+ul li:last-child {
+    text-decoration: underline;
+}
+
+.card ol li:nth-child(odd) {
+    color: #2e7d32;
+}
+
+.card ol li:nth-child(even) {
+    color: #1565c0;
+}
+
+.card:nth-child(3) {
+    background-color: #f9fafb;
+}
+
+.card p:first-of-type {
+    margin-top: 0.5rem;
+}
+
+.card p:last-of-type {
+    margin-bottom: 0.5rem;
+}
+
+.card:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+}
+
+.badge-wrapper > .badge:only-child {
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.spacer:empty {
+    height: 1rem;
+    background: linear-gradient(to right, #e0f7fa, #fff);
+}
+
+:lang(ru) body {
+    background-color: hsl(210, 100%, 98%);
+}
+
+.card p::first-line {
+    font-weight: 700;
+}
+
+.card p::first-letter {
+    font-size: 1.3em;
+}
+
+.card a::before {
+    content: "→ ";
+}
+
+.card a::after {
+    content: " ↗";
+    font-size: 0.9em;
+}
+
+.badge::before {
+    content: "★ ";
+}
+
+h1,
+h2,
+.badge {
+    text-transform: none;
+}
+
+.card + .card {
+    margin-top: 0.75rem;
+}
+
+.card a:hover::after {
+    color: #c62828;
+}
+
+a[href^="https://"]:hover {
+    opacity: 0.9;
+}
+
+a[href$="HTML"]:not(:hover) {
+    border-bottom: 1px dotted #0066cc;
+}
+
+.text {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "a a a"
+        "b c c"
+        "d e f";
+    gap: 20px;
+    max-width: 60rem; 
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1rem; 
+    margin: 100px auto 0 auto;
+}
+
+.p1 { background: rgba(89, 117, 165, 0.2); padding: 10px; grid-area: a; }
+.p2 { background: rgba(89, 117, 165, 0.2); padding: 10px; grid-area: b; }
+.p3 { background: rgba(89, 117, 165, 0.2); padding: 10px; grid-area: c; }
+.p4 { background: rgba(89, 117, 165, 0.2); padding: 10px; grid-area: d; }
+.p5 { background: rgba(89, 117, 165, 0.2); padding: 10px; grid-area: e; }
+.p6 { background: rgba(89, 117, 165, 0.2); padding: 10px; grid-area: f; }
+
+a {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(45deg, #0077ff, #00c6ff);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: 2s;
+}
+
+::selection {
+    background: greenyellow;
+    color: rgb(86, 12, 9);
+}
+
+.badge:hover {
+    transform: scale(1.6);
+}
+
+.ball {
+    width: 200px;
+    height: 200px;
+    background: red;
+    border-radius: 50%;
+    animation: morph 3s ease-in-out 3s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: box-shadow 3s ease;
+}
+
+
+@keyframes morph {
+    0% { background: red; border-radius: 50%; transform: scale(1); box-shadow: 0 5px 15px rgba(0, 4, 246, 0.3);}
+    33% { background: blue; border-radius: 0%; transform: scale(1.2); box-shadow: 0 20px 40px rgba(0, 4, 246, 0.6);}
+    66% { background: green; border-radius: 30%; transform: scale(0.8); box-shadow: 0 40px 60px rgba(0, 4, 246, 0.6);}
+    100% { background: red; border-radius: 50%; transform: scale(1); box-shadow: 0 5px 15px rgba(0, 4, 246, 0.3);}
+}
+
+.bottom-link:hover {
+    background: red;
+}
+
+.card-figure {
+    flex: 1 1 100%;
+    align-self: center;
+    order: 2;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem;
+    text-align: center;
+    width: 100%;
+}
+
+.reg-form {
+    max-width: 450px;
+    display: block;
+    width: 100%;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    text-align: left;
+}
+
+.group {
+    border: 1px solid #0077ff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.group legend {
+    font-weight: bold;
+    color: #0077ff;
+    padding: 0 5px;
+}
+
+.reg-form input,
+.reg-form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.reg-form input:invalid:not(:placeholder-shown) {
+    border-color: red;
+}
+
+.reg-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+.reg-form h1, .reg-form legend {
+    text-align: center;
+}
+
+
+.reg-form h1 {
+    text-align: center;
 }

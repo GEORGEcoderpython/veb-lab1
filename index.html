@@ -6,19 +6,25 @@
     <title>Veb-razrabotka</title>
 
     <link rel="stylesheet" href="css/normalize.css">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
-    <div class="container">
-        <h1>Veb-razrabotka</h1>
 
-        <!-- ОБЩИЙ СПИСОК, НЕ КАРТОЧКА -->
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="form.html">Форма</a>
+        </nav>
+    </header>
+
+    <div class="shapka">Шапка сайта</div>
+    <div class="container">
+        <h1 id="main-title">Veb-razrabotka</h1>
+
         <div>
             <p>Всего существует несколько атрибутов веб‑разработки:</p>
             <ul>
@@ -28,35 +34,97 @@
             </ul>
         </div>
 
-        <!-- КАРТОЧКА 1: HTML -->
+        <div class="spacer"></div>
+
+        <div class="best-site">Лучший сайт</div>
+
         <div class="card">
-            <img src="html-nedir-ne-ise-yarar.png" alt="Пример HTML-кода">
-            <p>
+
+            <figure class="card-figure">
+                <img src="html-nedir-ne-ise-yarar.png" alt="Логотип HTML5">
+                <figcaption class="sticky-title">Логотип HTML</figcaption>
+            </figure>
+
+            <p class="relative-text">
                 HTML (от англ. HyperText Markup Language — «язык гипертекстовой разметки») —
                 язык разметки, который используется для создания и структурирования веб‑страниц.
                 Он помогает определять, как содержимое страницы должно отображаться в браузерах.
             </p>
-            <a href="https://ru.wikipedia.org/wiki/HTML" target="_blank">HTML</a>
+
+            
+
+            <p class="stK=">
+                HTML работает по принципу дерева элементов: каждый тег может содержать вложенные
+                теги, образуя иерархию. Современный HTML5 добавил семантические теги вроде
+                header, nav, article и footer, которые делают код более понятным для поисковых
+                систем и скринридеров.
+            </p>
+
+            <a class="bottom-link" href="https://ru.wikipedia.org/wiki/HTML" target="_blank">
+                Подробнее
+            </a>
+
         </div>
 
-        <!-- КАРТОЧКА 2: CSS -->
-        <div class="card">
-            <img src="L_height.webp" alt="Пример CSS-кода">
+        
+        <div class="card_highlight">
+
+            <figure class="card-figure">
+                <img src="css-logo.jpg" alt="Логотип CSS3">
+                <figcaption>Логотип CSS</figcaption>
+            </figure>
+
             <p>
-                CSS (Cascading Style Sheets, «каскадные таблицы стилей») — язык стилей,
-                с помощью которого оформляют веб‑страницы. Он определяет, как должны
-                отображаться элементы HTML, включая макет, цвета, шрифты и другие
-                визуальные аспекты.
+                CSS (Cascading Style Sheets, «каскадные таблицы стилей») — язык
+                стилей, с помощью которого оформляют веб‑страницы. Он определяет,
+                как должны отображаться элементы HTML, включая макет, цвета,
+                шрифты и другие визуальные аспекты.
+            </p>
+            <p>
+                Стили пишутся в виде правил: селектор (например, p или .class)
+                указывает на элемент, а свойства вроде color: red; или
+                font-size: 16px; задают внешний вид. Каскадность означает,
+                что стили применяются с учетом приоритета и порядка.
+            </p>
+            <p>
+                CSS подключается тремя способами: внутри HTML-тега style, в
+                отдельном файле (через link) или прямо в атрибуте style.
+                Современные возможности включают Flexbox и Grid для сложных
+                макетов, анимации (@keyframes) и медиа-запросы (@media) для
+                адаптивного дизайна под разные экраны. Это позволяет создавать
+                responsive-сайты, которые идеально выглядят на телефонах,
+                планшетах и ПК без переписывания кода.
             </p>
             <a href="https://ru.wikipedia.org/wiki/CSS" target="_blank">CSS</a>
         </div>
 
-        <!-- КАРТОЧКА 3: JavaScript -->
+
         <div class="card">
-            <img src="i.webp" alt="Пример JavaScript-кода">
+            <figure class="card-figure">
+                <img src="js-logo.png" alt="Логотип JavaScript">
+                <figcaption>Логотип JavaScript</figcaption>
+            </figure>
+
             <p>
-                JavaScript (JS) — язык программирования, который изначально был создан для
-                добавления интерактивности на веб‑страницы.
+                JavaScript (JS) — язык программирования, который изначально был
+                создан для добавления интерактивности на веб‑страницы.
+            </p>
+            <p>
+                Он позволяет реагировать на действия пользователя,
+                такие как клики, ввод текста или прокрутка, динамически
+                изменяя содержимое без перезагрузки страницы. JS выполняется
+                в браузере на стороне клиента и использует синтаксис, похожий
+                на C: переменные (let, const), функции, циклы и условия.
+            </p>
+            <p>
+                Сегодня JavaScript вышел за рамки браузера благодаря Node.js,
+                который позволяет запускать его на сервере. Фреймворки вроде
+                React, Vue или Angular упрощают создание сложных приложений
+                (SPA). JS взаимодействует с HTML/CSS через DOM
+                (Document Object Model) — моделью страницы, где каждый элемент
+                доступен как объект. Например,
+                document.getElementById('id').style.color = 'blue';
+                мгновенно меняет цвет элемента.
             </p>
             <p>Поддерживает такие стили:</p>
             <ol>
@@ -65,14 +133,97 @@
                 <li>функциональный.</li>
             </ol>
             <p>
-                JavaScript обычно используется как встраиваемый язык для программного
-                доступа к объектам приложений.
+                JavaScript обычно используется как встраиваемый язык для
+                программного доступа к объектам приложений.
             </p>
             <a href="https://ru.wikipedia.org/wiki/JavaScript" target="_blank">JS</a>
         </div>
+
+        <div class="badge-wrapper">
+            <div class="badge">Кнопка</div>
+        </div>
     </div>
 
-    <div class="badge">Кнопка</div>
-</body>
+    <div class="text">
+        <p class="p1">
+            Интеграция HTML, CSS и JavaScript формирует полноценное веб-приложение.
+            HTML задаёт каркас, CSS отвечает за дизайн и отзывчивость, а JS
+            реализует логику и пользовательский опыт. Файлы подключаются просто:
+            link rel stylesheet href style.css в head для CSS и script src script.js
+            в конце body для JS. Инструменты разработчика в браузере F12 помогают
+            отлаживать код в реальном времени, проверяя стили, консоль ошибок и
+            сетевые запросы. Такой подход позволяет создавать быстрые и удобные сайты.
 
+
+        </p>
+
+        <p class="p2">
+            Flexbox и Grid в CSS революционизировали создание layouts. Flexbox работает
+            с одномерными последовательностями элементов, где justify-content управляет
+            горизонтальным выравниванием, а align-items вертикальным. Grid подходит для
+            двумерных сеток, с свойствами grid-template-columns и grid-gap. Эти
+            инструменты заменяют старые float и таблицы, делая код проще и гибче.
+            Для мобильных версий комбинируй их с viewport meta-тегом в HTML и
+            breakpoint в медиа-запросах.
+        </p>
+
+        <p class="p3">
+            Работа с DOM в JavaScript позволяет изменять страницу на лету. querySelectorAll
+            возвращает коллекцию элементов, getElementById находит по id. Методы вроде
+            innerHTML вставляют новый контент, classList.add или toggle управляют классами
+            для стилей CSS. Локальное хранение localStorage.setItem сохраняет данные в
+            браузере, а события вроде load или resize помогают адаптировать поведение.
+            Это основа для SPA-приложений, где весь контент обновляется динамически без
+            серверных запросов.
+        </p>
+
+        <p class="p4">
+            Адаптивный дизайн или responsive web design делает сайты удобными на любых
+            устройствах. В HTML используй семантические теги вроде header, nav, main,
+            section и footer для лучшей структуры и SEO. В CSS применяй относительные
+            единицы вроде em, rem или процентов вместо фиксированных пикселей, viewport
+            meta-тег в head обеспечивает правильное масштабирование. Медиа-запросы at
+            media (max-width: 768px) меняют стили для планшетов и телефонов, а
+            mobile-first подход начинает с базовых стилей для маленьких экранов,
+            добавляя сложность для больших. JavaScript может проверять window.innerWidth
+            и подгружать разные ресурсы динамически.
+        </p>
+
+        <p class="p5">
+            Анимации и переходы улучшают пользовательский опыт без перегрузки страницы.
+            В CSS transition: all 0.3s ease плавно меняет свойства вроде opacity или transform
+            при hover или focus. Keyframes определяют сложные анимации
+            at keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }, применяемые через
+            animation: fadeIn 1s forwards. JavaScript requestAnimationFrame обеспечивает 60 fps
+            для плавности, а IntersectionObserver отслеживает видимость элементов для ленивой
+            загрузки изображений. Эти техники делают сайты современными, но избегай излишеств,
+            чтобы не замедлять производительность на слабых устройствах.
+        </p>
+
+        <p class="p6">
+            Формы в веб-разработке собирают данные от пользователей и являются ключевым
+            элементом интерактивных сайтов. В HTML создавай их с тегом form, внутри input
+            разных типов text, email, password, number, textarea для многострочного текста,
+            select для выпадающих списков и button или input type submit для отправки.
+            Атрибуты name и id обязательны для идентификации, required обеспечивает валидацию
+            placeholder подсказывает ввод. CSS стилизует поля с border-radius для скругления,
+            focus псевдокласс подсвечивает активные элементы. JavaScript проверяет данные на
+            клиенте через addEventListener submit, preventDefault останавливает отправку при
+            ошибках, а FormData объект собирает все значения для AJAX-запроса через fetch на
+            сервер без перезагрузки страницы.
+        </p>
+    
+    </div>
+
+    <div class="ball">Пример анимации</div>
+    
+
+    <section class="container">
+        <h2>Связаться со мной</h2>
+        <p>Пишите: <a href="mailto:georgy@example.com">georgiy@gmail.com</a></p>
+        <p>Звоните: <a href="tel:+79991234567">+7 (999) 123-45-67</a></p>
+    </section>
+    
+
+</body>
 </html>

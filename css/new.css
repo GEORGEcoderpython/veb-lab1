@@ -1,0 +1,112 @@
+input {
+    background: #f0f8f0;
+    color: #333;
+    border: 1px solid #4a7a4c;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+
+.reg-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 350px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffffcc;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.group {
+    border: 2px solid #4a7a4c;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.group legend {
+    font-weight: bold;
+    color: #4a7a4c;
+    padding: 0 8px;
+}
+
+.reg-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+}
+
+.reg-form input,
+.reg-form select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+}
+
+.reg-form button {
+    transition: 0.3s;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #4a7a4c;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.reg-form button:hover {
+    background: #3a6a3c;
+}
+
+input::placeholder {
+    font-style: italic;
+    opacity: 0.8;
+    color: #4a7a4c;
+}
+
+.reg-form button:focus {
+    outline: 3px solid #7bcf7e;
+    outline-offset: 3px;
+}
+
+
+.reg-form button:active {
+    background: #2c4f2e;
+    transform: scale(0.97);
+}
+
+
+
+
+.card {
+    width: 350px;
+    background: lightblue;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #ccc;
+    border-top-color: #4a7a4c;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 40px auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
